@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<title>Cadastro de Usuário</title>
+	<h:outputStylesheet library="css" name="growl.css"/>
+</h:head> 
+<body>
+	<h:form>
+		<p:growl id="generoGrowl" showDetail="true" sticky="false" />
+		<p:messages />
+		<p:panel header="Digite os Dados">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Código do Gênero: " for="cod"/>
+				<p:inputMask id="cod" label="Código" value="#{generoBean.generoEnt.idgenero}" mask="99999" required="true" />
+				<p:outputLabel value="Descrição: " for="desc"/>
+				<p:inputText id="desc" label="Descrição" value="#{generoBean.generoEnt.descricao}" maxlength="45" required="true"/>
+			</p:panelGrid>
+			<p:commandButton action="#{generoBean.salvarGenero}" value="Salvar" update="generoGrowl"/>
+		</p:panel>
+	</h:form>	
+</body> 
+</html>

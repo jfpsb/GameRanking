@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+
+<h:head>
+	<title>Tela de Usuário</title>
+	<h:outputStylesheet library="css" name="pages.css"/>
+</h:head> 
+<body> 
+	<h1>Bem Vindo</h1>
+	<h3>Escolha o que quer fazer</h3>
+	<hr />
+	<h:form>
+		<div align="left">
+			<p:panelGrid columns="2">
+				<p:commandButton value="Inserir minha pontuação"/>
+				<p:commandButton value="Ver minha posição"/>
+				<p:commandButton value="Top 5 por game"/>
+				<p:commandButton value="Posição Global"/>
+				<p:commandButton value="Dados da Conta"/>
+			</p:panelGrid>
+		</div>
+	</h:form>	
+</body> 
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      > 
+
+<h:head>
+	<title>Tela de Administrador</title>
+	<h:outputStylesheet library="css" name="pages.css"/>
+	<h:outputStylesheet library="css" name="icon.css"/>
+</h:head>
+<body> 
+	<h:form>
+		<h1>Bem vindo, administrador</h1>
+		<h2>Escolha o que quer fazer abaixo</h2>
+		<hr />
+		<p:growl id="messages" showDetail="true"/>
+		<p:panelGrid columns="1">
+			<p:menuButton value="Usuário">
+				<p:menuitem value="Cadastrar" action="#{usuarioBean.cadastrar}" update="messages" icon="saveIcon" />
+				<p:menuitem value="Editar" action="#{usuarioBean.cadastrar}" update="messages" icon="editIcon" />
+				<p:menuitem value="Deletar" action="#{usuarioBean.cadastrar}" update="messages" icon="deleteIcon" />
+				<p:menuitem value="Pesquisar" action="#{usuarioBean.cadastrar}" update="messages" icon="searchIcon" />
+			</p:menuButton>
+			<p:menuButton value="Game">
+				<p:menuitem value="Cadastrar" action="#{gameBean.cadastrar}" update="messages" icon="saveIcon" />
+				<p:menuitem value="Editar" action="#{gameBean.cadastrar}" update="messages" icon="editIcon" />
+				<p:menuitem value="Deletar" action="#{gameBean.cadastrar}" update="messages" icon="deleteIcon" />
+				<p:menuitem value="Pesquisar" action="#{gameBean.cadastrar}" update="messages" icon="searchIcon" />
+			</p:menuButton>
+			<p:menuButton value="Gênero">
+				<p:menuitem value="Salvar" action="#{generoBean.cadastrar}" update="messages" icon="saveIcon" />
+				<p:menuitem value="Editar" action="#{gerneoBean.cadastrar}" update="messages" icon="editIcon" />
+				<p:menuitem value="Deletar" action="#{generoBean.cadastrar}" update="messages" icon="deleteIcon" />
+				<p:menuitem value="Pesquisar" action="#{generoBean.cadastrar}" update="messages" icon="searchIcon" />
+			</p:menuButton>
+		</p:panelGrid>
+	</h:form>
+</body> 
+</html>

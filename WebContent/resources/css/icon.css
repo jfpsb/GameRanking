@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+.saveIcon {
+	width: 20px;
+	height: 20px;
+  	background-image: url("#{resource['images/saveIcon.png']}") !important;
+}
+
+.editIcon {
+	width: 20px;
+	height: 20px;
+  	background-image: url("#{resource['images/editIcon.png']}") !important;
+}
+
+.deleteIcon {
+	width: 20px;
+	height: 20px;
+  	background-image: url("#{resource['images/deleteIcon.png']}") !important;
+}
+
+.searchIcon {
+	width: 20px;
+	height: 20px;
+  	background-image: url("#{resource['images/searchIcon.png']}") !important;
+}    
