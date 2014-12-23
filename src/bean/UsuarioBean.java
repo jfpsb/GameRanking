@@ -32,4 +32,8 @@ public class UsuarioBean implements Bean {
 	public void salvarUsuario() {
 		usuarioDAO.salvar(usuarioEnt);		
 	}
+	
+	public void deletarUsuario() {
+		usuarioDAO.deletar(usuarioEnt);
+	}
 }

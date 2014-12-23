@@ -25,7 +25,7 @@ public class UsuarioDAO {
 			insereSt.setString(3, usuario.getEmail());
 			insereSt.setString(4, usuario.getSenha());
 			insereSt.setBoolean(5, usuario.isAdmin());
-			insereSt.executeUpdate();			
+			insereSt.executeUpdate();
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, new FacesMessage("Sucesso",  "Usuário cadastrado com sucesso."));
 		} catch (SQLException e) {
@@ -39,6 +39,32 @@ public class UsuarioDAO {
 				System.out.println("Erro ao fechar conexão.");
 				e.printStackTrace();
 			}
+		}
+	}
+	
+	public void deletar(UsuarioEnt usuario) {
+		Connection conn = conexao.getCon();
+		PreparedStatement deleteSt = null;
+		
+		String sql = "DELETE FROM usuario WHERE idusuario = ?";
+		
+		try {
+			deleteSt = conn.prepareStatement(sql);
+			deleteSt.setInt(1, usuario.getIdusuario());
+			deleteSt.execute();
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage("Sucesso",  "Usuário deletado com sucesso."));
+		} catch (SQLException e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, new FacesMessage("Erro",  "Houve um erro ao deletar usuário. Cheque se digitou a informação corretamente."));
+		} finally {
+			try {
+				deleteSt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 }
