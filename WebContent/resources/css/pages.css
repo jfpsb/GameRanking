@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
-.ui-button { 
-	width: 250px; 
+.ui-button {
+	width: 250px;
 	height: 50px;
 }
 
@@ -9,8 +9,7 @@ body {
 	background-color: LightBlue;
 }
 
-.ui-panelgrid tr,
-.ui-panelgrid td {
-    background: none;
-    border-style: none !important;
+.ui-panelgrid tr, .ui-panelgrid td {
+	background: none;
+	border-style: none !important;
 }

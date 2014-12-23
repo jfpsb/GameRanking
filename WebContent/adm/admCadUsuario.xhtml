@@ -1,39 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title>Cadastro de Usuário</title>
-	<h:outputStylesheet library="css" name="growl.css"/>
-	<h:outputStylesheet library="css" name="cadastro.css"/>
+	<h:outputStylesheet library="css" name="growl.css" />
+	<h:outputStylesheet library="css" name="cadastro.css" />
 	<style>
-		.className td {
-			text-align: center;
-		}
-	</style>
-</h:head> 
+.className td {
+	text-align: center;
+}
+</style>
+</h:head>
 <body>
 	<h:form>
-		<p:growl id="usuarioGrowl" showDetail="true" sticky="false" />
-		<p:messages />
-		<p:panel header="Digite os Dados">
-			<p:panelGrid columns="2" cellpadding="5" styleClass="className">
-				<p:outputLabel value="Código do Usuário: " for="cod"/>
-				<p:inputMask id="cod" label="Código" value="#{usuarioBean.usuarioEnt.idusuario}" mask="99999" required="true" />
-				<p:outputLabel value="Nome: " for="nome"/>
-				<p:inputText id="nome" label="Nome" value="#{usuarioBean.usuarioEnt.nome}" maxlength="12" required="true"/>
-				<p:outputLabel value="E-mail: " for="email"/>
-				<p:inputText id="email" label="Email" value="#{usuarioBean.usuarioEnt.email}" maxlength="45" required="true"/>
-				<p:outputLabel value="Senha: " for="senha"/>
-				<p:password id="senha" label="Senha" value="#{usuarioBean.usuarioEnt.senha}" maxlength="8" required="true"/>
-				<p:outputLabel value="O usuário é administrador?"/>
-				<p:selectBooleanCheckbox id="isAdm" value="#{usuarioBean.usuarioEnt.admin}"/>
-			</p:panelGrid>
-			<p:commandButton action="#{usuarioBean.salvarUsuario}" value="Cadastrar" update="usuarioGrowl"/>
-		</p:panel>
-	</h:form>	
+		<div align="center">
+			<p:growl id="usuarioGrowl" showDetail="true" sticky="false" />
+			<p:messages />
+			<p:panel header="Digite os Dados" style="width: 50%">
+				<p:panelGrid columns="2" cellpadding="5" styleClass="className">
+					<p:outputLabel value="Código do Usuário: " for="cod" />
+					<p:inputMask id="cod" label="Código"
+						value="#{usuarioBean.usuarioEnt.idusuario}" mask="99999"
+						required="true" />
+					<p:outputLabel value="Nome: " for="nome" />
+					<p:inputText id="nome" label="Nome"
+						value="#{usuarioBean.usuarioEnt.nome}" maxlength="12"
+						required="true" />
+					<p:outputLabel value="E-mail: " for="email" />
+					<p:inputText id="email" label="Email"
+						value="#{usuarioBean.usuarioEnt.email}" maxlength="45"
+						required="true" />
+					<p:outputLabel value="Senha: " for="senha" />
+					<p:password id="senha" label="Senha"
+						value="#{usuarioBean.usuarioEnt.senha}" maxlength="8"
+						required="true" />
+					<p:outputLabel value="O usuário é administrador?" />
+					<p:selectBooleanCheckbox id="isAdm"
+						value="#{usuarioBean.usuarioEnt.admin}" />
+				</p:panelGrid>
+				<p:commandButton action="#{usuarioBean.salvarUsuario}"
+					value="Cadastrar" update="usuarioGrowl" />
+			</p:panel>
+		</div>
+	</h:form>
 </body>
 </html>

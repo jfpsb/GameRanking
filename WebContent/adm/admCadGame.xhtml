@@ -1,46 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title>Cadastro de Usuário</title>
-	<h:outputStylesheet library="css" name="growl.css"/>
-	<h:outputStylesheet library="css" name="cadastro.css"/>
+	<h:outputStylesheet library="css" name="growl.css" />
+	<h:outputStylesheet library="css" name="cadastro.css" />
 	<style>
-		.className td {
-			text-align: center;
-		}
-	</style>
-</h:head> 
+.className td {
+	text-align: center;
+}
+</style>
+</h:head>
 <body>
 	<h:form>
-		<p:growl id="gameGrowl" showDetail="true" sticky="false" />
-		<p:messages />
-		<p:panel header="Digite os Dados">
-			<p:panelGrid columns="2">
-				<p:outputLabel value="Código do Game: " for="cod"/>
-				<p:inputMask id="cod" label="Código" value="#{gameBean.gameEnt.idgame}" mask="99999" required="true" />
-				<p:outputLabel value="Descrição: " for="titulo"/>
-				<p:inputText id="titulo" label="Título" value="#{gameBean.gameEnt.titulo}" maxlength="60" required="true"/>
-				<p:outputLabel value="Marca: " for="marca"/>
-				<p:inputText id="marca" label="Marca" value="#{gameBean.gameEnt.marca}" maxlength="60" required="true"/>
-				<p:outputLabel value="Plataforma: " for="plataforma"/>
-				<p:inputText id="plataforma" label="Plataforma" value="#{gameBean.gameEnt.plataforma}" maxlength="60" required="true"/>
-				<p:outputLabel value="Faixa Etária: " for="faixaetaria"/>
-				<p:inputText id="faixaetaria" label="Faixa Etária" value="#{gameBean.gameEnt.faixaetaria}" maxlength="60" required="true"/>
-				<p:outputLabel value="Gênero: " for="genero"/>
-				<p:selectOneMenu id="genero" value="#{gameBean.gameEnt.idgenero}" style="width:125px">
-					<f:selectItem itemLabel="Selecione" itemValue=""/>
-					<f:selectItem itemLabel="Aventura" itemValue="1"/>
-					<f:selectItem itemLabel="FPS" itemValue="2"/>
-					<f:selectItem itemLabel="RPG" itemValue="3"/>
-				</p:selectOneMenu>
-			</p:panelGrid>
-			<p:commandButton action="#{gameBean.salvarGame}" value="Salvar" update="gameGrowl" />
-		</p:panel>
-	</h:form>	
-</body> 
+		<div align="center">
+			<p:growl id="gameGrowl" showDetail="true" sticky="false" />
+			<p:messages />
+			<p:panel header="Digite os Dados" style="width: 50%">
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Código do Game: " for="cod" />
+					<p:inputMask id="cod" label="Código"
+						value="#{gameBean.gameEnt.idgame}" mask="99999" required="true" />
+					<p:outputLabel value="Descrição: " for="titulo" />
+					<p:inputText id="titulo" label="Título"
+						value="#{gameBean.gameEnt.titulo}" maxlength="60" required="true" />
+					<p:outputLabel value="Marca: " for="marca" />
+					<p:inputText id="marca" label="Marca"
+						value="#{gameBean.gameEnt.marca}" maxlength="60" required="true" />
+					<p:outputLabel value="Plataforma: " for="plataforma" />
+					<p:inputText id="plataforma" label="Plataforma"
+						value="#{gameBean.gameEnt.plataforma}" maxlength="60"
+						required="true" />
+					<p:outputLabel value="Faixa Etária: " for="faixaetaria" />
+					<p:inputText id="faixaetaria" label="Faixa Etária"
+						value="#{gameBean.gameEnt.faixaetaria}" maxlength="60"
+						required="true" />
+					<p:outputLabel value="Gênero: " for="genero" />
+					<p:selectOneMenu id="genero" value="#{gameBean.gameEnt.idgenero}"
+						style="width:125px">
+						<f:selectItems value="#{menuDAO.genero}" var="menu"
+							itemLabel="#{menu.descricao}" itemValue="#{menu.idgenero}" />
+					</p:selectOneMenu>
+				</p:panelGrid>
+				<p:commandButton action="#{gameBean.salvarGame}" value="Salvar"
+					update="gameGrowl" />
+			</p:panel>
+		</div>
+	</h:form>
+</body>
 </html>
