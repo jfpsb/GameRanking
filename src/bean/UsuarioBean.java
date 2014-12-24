@@ -28,9 +28,17 @@ public class UsuarioBean implements Bean {
 	public String abrirForm() {
 		return "admUsuario";
 	}
+	
+	public String alterar() {
+		return "admDelUsuario";
+	}
+	
+	public String deletar() {
+		return "admDelUsuario";
+	}
 
 	public void salvarUsuario() {
-		usuarioDAO.salvar(usuarioEnt);		
+		usuarioDAO.salvar(usuarioEnt);
 	}
 	
 	public void deletarUsuario() {

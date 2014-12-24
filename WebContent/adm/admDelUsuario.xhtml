@@ -8,7 +8,6 @@
 
 <h:head>
 	<title>Deletar Usuário</title>
-	<h:outputStylesheet library="css" name="growl.css" />
 	<h:outputStylesheet library="css" name="cadastro.css" />
 	<style>
 .ui-button {
@@ -19,30 +18,38 @@
 </h:head>
 <body>
 	<div align="center">
-		<p:growl id="DelUsuarioGrowl" showDetail="true" sticky="false" />
 		<h:form>
+			<p:growl id="delGrowl" showDetail="true" sticky="false" />
+			<p:messages />
 			<p:panel header="Deleção de Usuário" style="width: 70%">
-				<p:dataTable>
+				<p:dataTable id="table" value="#{usuarioDAO.pesquisaAluno()}"
+					var="usuario" style="text-align: center">
 					<p:column>
 						<f:facet name="header">Código</f:facet>
+						<h:outputText value="#{usuario.idusuario}" />
 					</p:column>
 					<p:column>
 						<f:facet name="header">Nome</f:facet>
+						<h:outputText value="#{usuario.nome}" />
 					</p:column>
 					<p:column>
 						<f:facet name="header">E-mail</f:facet>
+						<h:outputText value="#{usuario.email}" />
 					</p:column>
 					<p:column>
 						<f:facet name="header">Admin?</f:facet>
+						<h:outputText value="#{usuario.admin}" />
 					</p:column>
 				</p:dataTable>
 				<br />
 				<p:panelGrid columns="2">
 					<p:outputLabel value="Escolha o código do usuário a deletar: " />
-					<p:inputText id="cod" name="Código" required="true" />
+					<p:inputText id="cod" name="Código"
+						value="#{usuarioBean.usuarioEnt.idusuario}" required="true" />
 				</p:panelGrid>
 				<p:commandButton value="Deletar Usuário"
-					action="#{usuarioBean.deletarUsuario}" />
+					action="#{usuarioBean.deletarUsuario}" update="delGrowl"
+					onclick="table" />
 			</p:panel>
 		</h:form>
 	</div>

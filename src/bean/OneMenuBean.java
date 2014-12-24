@@ -1,7 +1,5 @@
 package bean;
 
-import java.util.ArrayList;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -13,7 +11,7 @@ public class OneMenuBean {
 	private int idgenero;
 	private String descricao;
 	OneMenuDAO menuDAO = new OneMenuDAO();
-	ArrayList<OneMenuBean> genero = new ArrayList<OneMenuBean>();
+	
 	public int getIdgenero() {
 		return idgenero;
 	}

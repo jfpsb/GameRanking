@@ -30,6 +30,14 @@ public class GameBean implements Bean {
 		return "admGame";
 	}
 	
+	public String alterar() {
+		return "admDelUsuario";
+	}
+	
+	public String deletar() {
+		return "admDelUsuario";
+	}
+	
 	public void salvarGame() {
 		gameDAO.salvar(gameEnt);
 	}

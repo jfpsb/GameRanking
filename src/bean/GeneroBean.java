@@ -30,6 +30,14 @@ public class GeneroBean implements Bean {
 		return "admGenero";
 	}
 	
+	public String alterar() {
+		return "admDelUsuario";
+	}
+	
+	public String deletar() {
+		return "admDelUsuario";
+	}
+	
 	public void salvarGenero() {
 		generoDAO.salvar(generoEnt);
 	}
