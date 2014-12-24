@@ -1,8 +1,10 @@
 package banco;
 
+import java.io.Serializable;
 import java.sql.*;
 
-public class Conexao {
+public class Conexao implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String url = "jdbc:mysql://localhost/";
 	private String banco = "bdgameranking";

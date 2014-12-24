@@ -62,7 +62,7 @@ public class UsuarioDAO implements Serializable {
 			context.addMessage(null, new FacesMessage("Sucesso. Usuário deletado."));
 		} catch (SQLException e) {
 			FacesContext context = FacesContext.getCurrentInstance();
-			context.addMessage(null, new FacesMessage("Erro",  "Houve um erro ao deletar usuário. Cheque se digitou a informação corretamente."));
+			context.addMessage(null, new FacesMessage("Erro. Houve um erro ao deletar usuário."));
 		} finally {
 			try {
 				deleteSt.close();
