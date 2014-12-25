@@ -1,13 +1,12 @@
 package entidade;
 
 public class GeneroEnt {
-	int idgenero;
-	String descricao;
+	private String descricao, idgenero;
 	
-	public int getIdgenero() {
+	public String getIdgenero() {
 		return idgenero;
 	}
-	public void setIdgenero(int idgenero) {
+	public void setIdgenero(String idgenero) {
 		this.idgenero = idgenero;
 	}
 	public String getDescricao() {

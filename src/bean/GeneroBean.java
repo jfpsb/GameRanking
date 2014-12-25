@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.ArrayList;
+
 import interfaces.Bean;
 
 import javax.faces.bean.ManagedBean;
@@ -35,10 +37,18 @@ public class GeneroBean implements Bean {
 	}
 	
 	public String deletar() {
-		return "admDelUsuario";
+		return "admDelGenero";
 	}
 	
 	public void salvarGenero() {
 		generoDAO.salvar(generoEnt);
+	}
+	
+	public void deletarGenero() {
+		generoDAO.deletar(generoEnt);
+	}
+	
+	public ArrayList<GeneroEnt> listar() {
+		return generoDAO.pesquisaGenero();
 	}
 }
