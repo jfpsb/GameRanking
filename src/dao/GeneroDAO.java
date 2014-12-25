@@ -15,7 +15,7 @@ public class GeneroDAO {
 	Conexao conexao = new Conexao();
 	
 	public void salvar(GeneroEnt genero) {
-		Connection conn = conexao.getCon();
+		Connection conn = new Conexao().getCon();
 		PreparedStatement insereSt = null;
 		
 		String sql = "INSERT INTO genero (idgenero, descricao) VALUES (?, ?)";

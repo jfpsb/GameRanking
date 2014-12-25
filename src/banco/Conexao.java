@@ -24,5 +24,14 @@ public class Conexao implements Serializable {
 
 	public Connection getCon() {
 		return con;
-	}	
+	}
+	
+	public void fecharCon (Connection conn) {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

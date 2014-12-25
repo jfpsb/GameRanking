@@ -1,8 +1,8 @@
 package entidade;
 
 public class GameEnt {
-	int idgame, idgenero;
-	String titulo, marca, plataforma, faixaetaria;
+	int idgame;
+	String titulo, marca, plataforma, faixaetaria, idgenero;
 	
 	public int getIdgame() {
 		return idgame;
@@ -10,10 +10,10 @@ public class GameEnt {
 	public void setIdgame(int idgame) {
 		this.idgame = idgame;
 	}
-	public int getIdgenero() {
+	public String getIdgenero() {
 		return idgenero;
 	}
-	public void setIdgenero(int idgenero) {
+	public void setIdgenero(String idgenero) {
 		this.idgenero = idgenero;
 	}
 	public String getTitulo() {

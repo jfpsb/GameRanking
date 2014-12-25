@@ -6,12 +6,11 @@ import banco.Conexao;
 
 public class LoginDAO {
 	Conexao conexao = new Conexao();
-	Connection conn;
 	Statement consulta;
 	ResultSet rs;
 	
 	public String getSenhaBD (String login) {
-		conn = conexao.getCon();
+		Connection conn = new Conexao().getCon();
 		consulta = null;
 		rs = null;
 		String senhaBD = null;
@@ -26,12 +25,22 @@ public class LoginDAO {
 			}
 		} catch (SQLException e) {
 			System.out.println("erro");
-		} 
+		} finally {
+			try {
+			rs.close();
+			consulta.close();
+			conn.close();
+			} catch (Throwable e) {
+				e.printStackTrace();
+			}	
+		}
 		
 		return senhaBD;
 	}
 	
 	public boolean isADM (String login) {
+		Connection conn = new Conexao().getCon();
+		
 		conn = conexao.getCon();
 		consulta = null;
 		rs = null;

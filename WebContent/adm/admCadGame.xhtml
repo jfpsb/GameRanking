@@ -13,6 +13,10 @@
 .className td {
 	text-align: center;
 }
+
+.ui-selectonemenu-label {
+	width: 100% !important;
+}
 </style>
 </h:head>
 <body>
@@ -42,7 +46,7 @@
 					<p:outputLabel value="Gênero: " for="genero" />
 					<p:selectOneMenu id="genero" value="#{gameBean.gameEnt.idgenero}"
 						style="width:125px">
-						<f:selectItems value="#{menuDAO.genero}" var="menu"
+						<f:selectItems value="#{oneMenuBean.listar()}" var="menu"
 							itemLabel="#{menu.descricao}" itemValue="#{menu.idgenero}" />
 					</p:selectOneMenu>
 				</p:panelGrid>

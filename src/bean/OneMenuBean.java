@@ -1,27 +1,20 @@
 package bean;
 
+import java.util.ArrayList;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 
 import dao.OneMenuDAO;
+import entidade.OneMenuEnt;
 
 @ManagedBean(name="oneMenuBean")
-@SessionScoped
+@RequestScoped
 public class OneMenuBean {
-	private int idgenero;
-	private String descricao;
-	OneMenuDAO menuDAO = new OneMenuDAO();
+	OneMenuDAO oneMenuDAO = new OneMenuDAO();
+	OneMenuEnt oneMenuEnt = new OneMenuEnt();
 	
-	public int getIdgenero() {
-		return idgenero;
+	public ArrayList <OneMenuEnt> listar () {
+		return oneMenuDAO.getGenero();
 	}
-	public void setIdgenero(int idgenero) {
-		this.idgenero = idgenero;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}	
 }

@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.ArrayList;
+
 import interfaces.Bean;
 
 import javax.faces.bean.ManagedBean;
@@ -35,10 +37,18 @@ public class GameBean implements Bean {
 	}
 	
 	public String deletar() {
-		return "admDelUsuario";
+		return "admDelGame";
 	}
 	
 	public void salvarGame() {
 		gameDAO.salvar(gameEnt);
+	}
+	
+	public void deletarGame() {
+		gameDAO.deletar(gameEnt);
+	}
+	
+	public ArrayList<GameEnt> listar() {
+		return gameDAO.pesquisaGame();
 	}
 }

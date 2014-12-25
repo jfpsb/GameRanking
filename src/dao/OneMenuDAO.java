@@ -3,23 +3,18 @@ package dao;
 import java.sql.*;
 import java.util.ArrayList;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
+import entidade.OneMenuEnt;
 import banco.Conexao;
-import bean.OneMenuBean;
 
-@ManagedBean(name="menuDAO")
-@SessionScoped
 public class OneMenuDAO {
 
 	Conexao con = new Conexao();	
 
-	public ArrayList<OneMenuBean> getGenero() {		
+	public ArrayList<OneMenuEnt> getGenero() {
 
 		Connection conn = con.getCon();
 		
-		ArrayList<OneMenuBean> genero = new ArrayList<OneMenuBean>();
+		ArrayList<OneMenuEnt> genero = new ArrayList<OneMenuEnt>();
 
 		try {
 			Statement stmt = conn.createStatement();
@@ -29,12 +24,12 @@ public class OneMenuDAO {
 			while (rs.next()) {
 				int idgenero = rs.getInt("idgenero");
 				String descricao = rs.getString("descricao");
-				OneMenuBean menuBean = new OneMenuBean();
+				OneMenuEnt oneMenuEnt = new OneMenuEnt();
 
-				menuBean.setIdgenero(idgenero);
-				menuBean.setDescricao(descricao);
+				oneMenuEnt.setIdgenero(idgenero);
+				oneMenuEnt.setDescricao(descricao);
 
-				genero.add(menuBean);
+				genero.add(oneMenuEnt);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
