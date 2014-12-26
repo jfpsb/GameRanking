@@ -3,8 +3,8 @@ package entidade;
 public class UsuarioEnt {
 	
 	private String nome, email, senha;
-	int idusuario;
-	boolean admin;
+	private int idusuario;
+	private boolean admin;
 	
 	public String getNome() {
 		return nome;

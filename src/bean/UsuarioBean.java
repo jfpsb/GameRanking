@@ -29,6 +29,10 @@ public class UsuarioBean implements Bean, Serializable {
 		return "admCadUsuario";
 	}
 	
+	public String pesquisar() {
+		return "admPesqUsuario";
+	}
+	
 	public String abrirForm() {
 		return "admUsuario";
 	}

@@ -32,6 +32,10 @@ public class GameBean implements Bean {
 		return "admGame";
 	}
 	
+	public String pesquisar() {
+		return "admPesqGame";
+	}
+	
 	public String alterar() {
 		return "admDelUsuario";
 	}

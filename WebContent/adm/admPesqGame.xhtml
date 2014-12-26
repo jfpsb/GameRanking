@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Pesquisar Game</title>
+	<h:outputStylesheet library="css" name="cadastro.css" />
+</h:head>
+<body>
+	<div align="center">
+		<h:form>
+			<p:messages />
+			<p:panel header="Pesquisa de Game" style="width: 70%">
+				<p:dataTable id="table" value="#{gameBean.listar()}" var="game"
+					style="text-align: center">
+					<p:column>
+						<f:facet name="header">Código</f:facet>
+						<h:outputText value="#{game.idgame}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Título</f:facet>
+						<h:outputText value="#{game.titulo}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Marca</f:facet>
+						<h:outputText value="#{game.marca}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Plataforma</f:facet>
+						<h:outputText value="#{game.plataforma}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Faixa Etária</f:facet>
+						<h:outputText value="#{game.faixaetaria}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">Gênero</f:facet>
+						<h:outputText value="#{game.idgenero}" />
+					</p:column>
+				</p:dataTable>
+				<br />
+			</p:panel>
+		</h:form>
+	</div>
+</body>
+</html>
